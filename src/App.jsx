@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react'
-
-// utils
-import { connectSocket } from 'utils/io'
+import React from 'react'
 
 // components
 import Routes from './routes'
 
 function App() {
-  useEffect(() => {
-    // establish connection to our socket.io server
-    connectSocket()
-  }, [])
-
   return (
     <div className="App">
       <Routes />
