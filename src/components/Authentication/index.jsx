@@ -20,6 +20,7 @@ const Authentication = ({ provider, height, width }) => {
     const top = window.innerHeight / 2 - height / 2
     const url = getURL()
 
+    if (!url) return null
     return window.open(
       url,
       '',
