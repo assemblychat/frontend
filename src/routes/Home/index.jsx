@@ -1,7 +1,14 @@
 import React from 'react'
 
+// components
+import Authentication from 'components/Authentication'
+
 const Home = () => {
-  return <p>Home</p>
+  return (
+    <div>
+      <Authentication provider="twitter" />
+    </div>
+  )
 }
 
 export default Home
