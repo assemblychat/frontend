@@ -22,16 +22,18 @@ const Home = ({ setUser, unsetUser }) => {
       .catch(err => console.error(err))
   }
 
-  const handleAuth = () => {
-    return providerLogin('google')
+  const handleAuth = provider => {
+    return providerLogin(provider)
       .then(user => setUser(user))
-      .catch(err => console.log(err))
+      .catch(err => console.error(err))
   }
 
   if (user?.isLoggedIn) return <button onClick={handleLogout}>logout</button>
   return (
     <div>
-      <button onClick={handleAuth}>click</button>
+      <button onClick={() => handleAuth('twitter')}>twitter</button>
+      <button onClick={() => handleAuth('facebook')}>facebook</button>
+      <button onClick={() => handleAuth('google')}>google</button>
     </div>
   )
 }

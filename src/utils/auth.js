@@ -25,7 +25,7 @@ export const logout = async () => {
     .catch(err => new Error('Error logging user out', err))
 }
 
-export const providerLogin = async (provider, opts = {}) => {
+export const providerLogin = (provider, opts = {}) => {
   const getURL = () => {
     switch (provider) {
       case 'twitter':
@@ -39,13 +39,15 @@ export const providerLogin = async (provider, opts = {}) => {
 
   const url = getURL()
 
-  return popupTools.popup(
-    url,
-    `${capitalize(provider)} Connect`,
-    opts,
-    (err, user) => {
-      if (err) return console.error('Error with user authentication', err)
-      return user
-    }
-  )
+  return new Promise((resolve, reject) => {
+    return popupTools.popup(
+      url,
+      `${capitalize(provider)} Connect`,
+      opts,
+      (err, user) => {
+        if (err) reject(err)
+        return resolve(user)
+      }
+    )
+  })
 }
