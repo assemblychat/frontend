@@ -7,6 +7,9 @@ import { getUserSession, logout, providerLogin } from 'utils/auth'
 // ducks
 import { setUser, unsetUser } from 'ducks/user'
 
+// components
+import { Avatar } from 'components/Shared'
+
 const Home = ({ setUser, unsetUser }) => {
   const user = useSelector(state => state.user)
 
@@ -28,7 +31,21 @@ const Home = ({ setUser, unsetUser }) => {
       .catch(err => console.error(err))
   }
 
-  if (user?.isLoggedIn) return <button onClick={handleLogout}>logout</button>
+  if (user?.isLoggedIn) {
+    const { profile } = user
+    return (
+      <div>
+        <Avatar
+          src={profile.photo}
+          alt={profile?.firstName}
+          onClick={handleLogout}
+          height={48}
+          width={48}
+        />
+        <button onClick={handleLogout}>logout</button>
+      </div>
+    )
+  }
   return (
     <div>
       <button onClick={() => handleAuth('twitter')}>twitter</button>
