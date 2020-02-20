@@ -2,6 +2,7 @@ import axios from 'axios'
 import popupTools from 'popup-tools'
 
 import { BACKEND_URL } from 'utils/apis'
+import { capitalize } from 'utils/strings'
 
 export const getUserSession = async () => {
   return axios
@@ -38,8 +39,13 @@ export const providerLogin = async (provider, opts = {}) => {
 
   const url = getURL()
 
-  return popupTools.popup(url, `${provider} Connect`, opts, (err, user) => {
-    if (err) return console.error('Error with user authentication', err)
-    return user
-  })
+  return popupTools.popup(
+    url,
+    `${capitalize(provider)} Connect`,
+    opts,
+    (err, user) => {
+      if (err) return console.error('Error with user authentication', err)
+      return user
+    }
+  )
 }
