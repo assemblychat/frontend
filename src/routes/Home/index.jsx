@@ -16,7 +16,7 @@ const Home = ({ setUser, unsetUser }) => {
   useEffect(() => {
     getUserSession()
       .then(res => (res?.data ? setUser(res?.data) : null))
-      .catch(err => console.warning(err))
+      .catch(err => console.error(err))
   }, [setUser])
 
   const handleLogout = () => {
@@ -27,7 +27,7 @@ const Home = ({ setUser, unsetUser }) => {
 
   const handleAuth = provider => {
     return providerLogin(provider)
-      .then(user => setUser(user))
+      .then(console.log)
       .catch(err => console.error(err))
   }
 

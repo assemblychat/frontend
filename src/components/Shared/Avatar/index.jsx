@@ -46,6 +46,7 @@ StyledAvatar.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   borderRadius: PropTypes.string,
+  onClick: PropTypes.func,
 }
 
 StyledAvatar.defaultProps = {
