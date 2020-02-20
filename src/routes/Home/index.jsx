@@ -17,7 +17,7 @@ const Home = ({ setUser, unsetUser }) => {
     getUserSession()
       .then(res => (res?.data ? setUser(res?.data) : null))
       .catch(err => console.warning(err))
-  }, [])
+  }, [setUser])
 
   const handleLogout = () => {
     return logout()
