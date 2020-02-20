@@ -7720,6 +7720,11 @@ pnp-webpack-plugin@1.6.0:
   dependencies:
     ts-pnp "^1.1.2"
 
+popup-tools@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/popup-tools/-/popup-tools-1.0.2.tgz#0a9c16537f098132c64292cc8afbc448c4d5efb5"
+  integrity sha1-CpwWU38JgTLGQpLMivvESMTV77U=
+
 portfinder@^1.0.25:
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.25.tgz#254fd337ffba869f4b9d37edc298059cb4d35eca"

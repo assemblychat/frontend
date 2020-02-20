@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import popupTools from 'popup-tools'
+import { connect } from 'react-redux'
 
 import { BACKEND_URL } from 'utils/apis'
 
-const Authentication = ({ provider, height, width }) => {
+import { setUser } from 'ducks/user'
+
+const Authentication = ({ provider, height, width, setUser }) => {
   const getURL = () => {
     switch (provider) {
       case 'twitter':
@@ -16,18 +20,13 @@ const Authentication = ({ provider, height, width }) => {
   }
 
   const openPopup = () => {
-    const left = window.innerWidth / 2 - width / 2
-    const top = window.innerHeight / 2 - height / 2
     const url = getURL()
 
     if (!url) return null
-    return window.open(
-      url,
-      '',
-      `toolbar=no, location=no, directories=no, status=no, menubar=no, 
-      scrollbars=no, resizable=no, copyhistory=no, width=${width}, 
-      height=${height}, top=${top}, left=${left}`
-    )
+    return popupTools.popup(url, `${provider} Connect`, {}, (err, user) => {
+      if (err) return console.error('Error with provider login', err)
+      return setUser(user)
+    })
   }
 
   return <button onClick={openPopup}>Authenticate</button>
@@ -44,4 +43,4 @@ Authentication.defaultProps = {
   width: 600,
 }
 
-export default Authentication
+export default connect(undefined, { setUser })(Authentication)
