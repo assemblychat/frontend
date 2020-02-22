@@ -3,7 +3,7 @@ import React from 'react'
 // components
 import Routes from './routes'
 
-function App() {
+const App = ({ setUser }) => {
   return (
     <div className="App">
       <Routes />

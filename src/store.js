@@ -1,5 +1,6 @@
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import promise from 'redux-promise-middleware'
 
 import * as reducers from 'ducks'
 
@@ -11,7 +12,7 @@ const composeEnhancers =
         serialize: true,
       })
     : compose
-const middleware = applyMiddleware(thunk)
+const middleware = applyMiddleware(thunk, promise)
 
 const store = createStore(rootReducer, composeEnhancers(middleware))
 
