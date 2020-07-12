@@ -1,11 +1,11 @@
 import { useContext } from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 // context
 import { AppContext } from 'context'
 
 // utils
-import { getColors } from 'utils/colors'
+import { backgroundColor, fontColor } from 'utils/theme'
 
 // components
 import Sidebar from 'components/Sidebar'
@@ -18,15 +18,16 @@ function AppLayout(props: AppLayoutProps) {
   const { children } = props
   const { state, dispatch } = useContext(AppContext)
 
-  const background = getColors(state.theme.mode)?.background
-  const globalStyleProps = { background }
+  const { mode } = state.theme
 
   return (
-    <Wrapper>
-      <Sidebar />
-      <GlobalStyle {...globalStyleProps} />
-      {children}
-    </Wrapper>
+    <ThemeProvider theme={{ mode }}>
+      <Wrapper>
+        <Sidebar />
+        <GlobalStyle />
+        {children}
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 
@@ -40,7 +41,12 @@ const Wrapper = styled.div`
 `
 
 const GlobalStyle = createGlobalStyle`
+  html, body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+  }
   body {
-    background-color: ${props => props.background};
+    background-color: ${backgroundColor};
+    color: ${fontColor};
   }
 `

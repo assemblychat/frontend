@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import { AppProvider } from 'context'
 
+// global css
 import 'normalize.css'
 
 // components

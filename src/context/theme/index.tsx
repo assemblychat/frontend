@@ -35,3 +35,14 @@ export function themeReducer(state: ThemeType, action: ThemeActions) {
       return state
   }
 }
+
+// actions
+export const toggleTheme = state => {
+  const { mode } = state.theme
+  switch (mode) {
+    case 'light':
+      return { type: Types.ToggleTheme, payload: 'dark' }
+    case 'dark':
+      return { type: Types.ToggleTheme, payload: 'light' }
+  }
+}

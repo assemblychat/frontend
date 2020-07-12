@@ -1,34 +1,23 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
 
+// utils
+import { sidebarColor, sidebarBorderColor } from 'utils/theme'
+
 // context
 import { AppContext } from 'context'
-import { Types } from 'context/theme'
 
-// utils
-import { getColors } from 'utils/colors'
+// components
+import Icon from 'components/Shared/Icon'
 
 interface SidebarProps {}
 
 function Sidebar(props: SidebarProps) {
   const { state, dispatch } = useContext(AppContext)
 
-  const handleToggle = () => {
-    const { mode } = state.theme
-    switch (mode) {
-      case 'light':
-        return dispatch({ type: Types.ToggleTheme, payload: 'dark' })
-      case 'dark':
-        return dispatch({ type: Types.ToggleTheme, payload: 'light' })
-    }
-  }
-
-  const sidebar = getColors(state.theme.mode)?.sidebar
-  const wrapperProps = { sidebar }
-
   return (
-    <Wrapper {...wrapperProps}>
-      <button onClick={handleToggle}>Toggle Theme</button>
+    <Wrapper>
+      <Icon name="assembly" />
     </Wrapper>
   )
 }
@@ -36,6 +25,7 @@ function Sidebar(props: SidebarProps) {
 export default Sidebar
 
 const Wrapper = styled.div`
-  background-color: ${props => props.sidebar};
+  background-color: ${sidebarColor};
+  border-right: 1px solid ${sidebarBorderColor};
   height: 100vh;
 `
