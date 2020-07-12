@@ -65,6 +65,7 @@ const StyledButton = styled(Button)`
   padding: 0.5rem 1rem;
   text-transform: uppercase;
   font-size: 0.875rem;
+  font-weight: 500;
 
   background-color: ${props => handleBackgroundColor(props)};
   border: ${props => handleBorderColor(props)};
