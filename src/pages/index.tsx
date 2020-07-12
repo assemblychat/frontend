@@ -5,7 +5,7 @@ import { AppContext } from 'context'
 import { toggleTheme } from 'context/theme'
 
 // components
-import Button from 'components/Shared/Button'
+import Button from 'components/shared/Button'
 
 function Home() {
   const { state, dispatch } = useContext(AppContext)
@@ -14,9 +14,7 @@ function Home() {
   return (
     <div>
       <p>Current Theme: {mode}</p>
-      <Button icon="plus" onClick={() => dispatch(toggleTheme(state))}>
-        Toggle Theme
-      </Button>
+      <Button icon="user">Primary</Button>
       <Button icon="plus" color="secondary">
         Secondary
       </Button>

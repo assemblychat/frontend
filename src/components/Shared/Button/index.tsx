@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { primaryColor, secondaryColor, fontColor } from 'utils/theme'
 
 // components
-import Icon from 'components/Shared/Icon'
+import Icon from 'components/shared/Icon'
 
 type ButtonProps = {
   children?: React.ReactChild
@@ -12,6 +12,7 @@ type ButtonProps = {
   icon?: string
   outlined?: boolean
   color?: 'primary' | 'secondary'
+  onClick?: () => null
 }
 
 function Button(props: ButtonProps) {
@@ -46,6 +47,7 @@ const handleBorderColor = props => {
   const { outlined } = props
 
   if (!outlined) return 'none'
+  return handleColor(props)
 }
 
 const handleFontColor = props => {

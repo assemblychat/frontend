@@ -8,7 +8,9 @@ import { sidebarColor, sidebarBorderColor, fontColor } from 'utils/theme'
 import { AppContext } from 'context'
 
 // components
-import Icon from 'components/Shared/Icon'
+import Icon from 'components/shared/Icon'
+import IconButton from 'components/shared/IconButton'
+import UserCommunities from 'components/UserCommunities'
 
 interface SidebarProps {}
 
@@ -17,7 +19,9 @@ function Sidebar(props: SidebarProps) {
 
   return (
     <Wrapper>
-      <Icon name="assembly" fill="#FF0000" />
+      <Icon name="assembly" />
+      <UserCommunities />
+      <IconButton name="user-circle" size="xl" />
     </Wrapper>
   )
 }
@@ -25,7 +29,16 @@ function Sidebar(props: SidebarProps) {
 export default Sidebar
 
 const Wrapper = styled.div`
+  position: relative;
   background-color: ${sidebarColor};
   border-right: 1px solid ${sidebarBorderColor};
-  height: 100vh;
+  height: calc(100vh - 2rem);
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  display: grid;
+  grid-auto-flow: row;
+  align-content: space-between;
+  justify-items: center;
 `

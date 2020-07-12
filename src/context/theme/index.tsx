@@ -14,7 +14,7 @@ export enum Types {
 }
 
 export type ThemeType = {
-  mode: 'light' | 'dark'
+  mode: 'light' | 'dark' | string
 }
 
 // actions
