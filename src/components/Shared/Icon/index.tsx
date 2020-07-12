@@ -6,18 +6,24 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 // build library
 library.add(fab, faPlus)
 
-import AssemblyIcon from './icon-assembly'
+// custom svg icons
+import { Assembly as AssemblyIcon } from './js'
 
 type IconProps = {
   name: string
+  fill?: string
+  height?: number
+  width?: number
 }
 
 function Icon(props: IconProps) {
-  const { name } = props
+  const { name, fill, height, width } = props
+
+  const customProps = { fill, height, width }
 
   switch (name) {
     case 'assembly':
-      return <AssemblyIcon />
+      return <AssemblyIcon {...customProps} />
     default:
       return <FontAwesomeIcon icon={name} />
   }

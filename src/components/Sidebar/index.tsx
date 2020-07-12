@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import styled from 'styled-components'
 
 // utils
-import { sidebarColor, sidebarBorderColor } from 'utils/theme'
+import { sidebarColor, sidebarBorderColor, fontColor } from 'utils/theme'
 
 // context
 import { AppContext } from 'context'
@@ -17,7 +17,7 @@ function Sidebar(props: SidebarProps) {
 
   return (
     <Wrapper>
-      <Icon name="assembly" />
+      <Icon name="assembly" fill="#FF0000" />
     </Wrapper>
   )
 }
