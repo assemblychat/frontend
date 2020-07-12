@@ -2,13 +2,12 @@ import { useContext } from 'react'
 
 // context
 import { AppContext } from 'context'
-import { toggleTheme } from 'context/theme'
 
 // components
 import Button from 'components/shared/Button'
 
 function Home() {
-  const { state, dispatch } = useContext(AppContext)
+  const { state } = useContext(AppContext)
   const { mode } = state.theme
 
   return (
