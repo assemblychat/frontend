@@ -32,6 +32,7 @@ export default class MyDocument extends Document<Props> {
             href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" type="image/png" href="/favicon.png" />
           {this.props.styleTags}
         </Head>
         <body>
