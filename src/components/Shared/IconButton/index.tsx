@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // components
-import Icon from 'components/shared/Icon'
+import Icon from 'components/Shared/Icon'
 
 // utils
 import { fontColor } from 'utils/theme'

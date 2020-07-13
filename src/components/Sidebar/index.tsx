@@ -8,8 +8,8 @@ import { sidebarColor, sidebarBorderColor, fontColor } from 'utils/theme'
 import { AppContext } from 'context'
 
 // components
-import Icon from 'components/shared/Icon'
-import IconButton from 'components/shared/IconButton'
+import Icon from 'components/Shared/Icon'
+import IconButton from 'components/Shared/IconButton'
 import UserCommunities from 'components/UserCommunities'
 
 interface SidebarProps {}

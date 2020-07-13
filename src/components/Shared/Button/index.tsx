@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { primaryColor, secondaryColor, fontColor } from 'utils/theme'
 
 // components
-import Icon from 'components/shared/Icon'
+import Icon from 'components/Shared/Icon'
 
 type ButtonProps = {
   children?: React.ReactChild

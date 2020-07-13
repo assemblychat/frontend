@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { AppContext } from 'context'
 
 // components
-import Button from 'components/shared/Button'
+import Button from 'components/Shared/Button'
 
 function Home() {
   const { state } = useContext(AppContext)

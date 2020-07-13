@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 // components
-import CommunityIcon from 'components/shared/CommunityIcon'
-import IconButton from 'components/shared/IconButton'
+import CommunityIcon from 'components/Shared/CommunityIcon'
+import IconButton from 'components/Shared/IconButton'
 
 function UserCommunities(props) {
   const communities = ['1', '2', '3']
