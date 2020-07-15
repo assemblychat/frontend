@@ -1,22 +1,15 @@
-import { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 // utils
-import { sidebarColor, sidebarBorderColor, fontColor } from 'utils/theme'
-
-// context
-import { AppContext } from 'context'
+import { sidebarColor, sidebarBorderColor } from 'utils/theme'
 
 // components
 import Icon from 'components/Shared/Icon'
 import IconButton from 'components/Shared/IconButton'
 import UserCommunities from 'components/UserCommunities'
 
-interface SidebarProps {}
-
-function Sidebar(props: SidebarProps) {
-  const { state, dispatch } = useContext(AppContext)
-
+function Sidebar(props) {
   return (
     <Wrapper>
       <Icon name="assembly" />
