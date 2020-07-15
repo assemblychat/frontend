@@ -11,10 +11,7 @@
     "generate:icons": "svgr --replace-attr-values '#fff=fill' -d ./src/components/Shared/Icon/js --ignore-existing ./src/components/Shared/Icon/svg"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.29",
-    "@fortawesome/free-brands-svg-icons": "^5.13.1",
-    "@fortawesome/pro-solid-svg-icons": "^5.13.1",
-    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@assemblychat/icons": "^1.0.2",
     "@types/styled-theming": "^2.2.4",
     "next": "9.4.4",
     "normalize.css": "^8.0.1",

@@ -1,30 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-
-// components
-import Icon from 'components/Shared/Icon'
+import Icon, { IconSize, IconName } from '@assemblychat/icons'
 
 // utils
 import { fontColor } from 'utils/theme'
 
 type IconButtonProps = {
-  name?: string
+  icon?: IconName
   className?: string
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'inherit'
+  size?: IconSize
 }
 
-function IconButton(props: IconButtonProps) {
-  const { className, name, size } = props
-
+function IconButton({ className, icon, size }: IconButtonProps) {
   return (
     <button className={className}>
-      <Icon name={name} size={size} />
+      <Icon icon={icon} size={size} />
     </button>
   )
-}
-
-IconButton.defaultProps = {
-  size: 'inherit',
 }
 
 const StyledIconButton = styled(IconButton)`

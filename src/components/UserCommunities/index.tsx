@@ -13,7 +13,7 @@ function UserCommunities(props) {
       {communities.map(community => (
         <CommunityIcon key={community} />
       ))}
-      <IconButton name="plus" />
+      <IconButton icon="plus" />
     </Wrapper>
   )
 }

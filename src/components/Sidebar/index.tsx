@@ -5,16 +5,15 @@ import styled from 'styled-components'
 import { sidebarColor, sidebarBorderColor } from 'utils/theme'
 
 // components
-import Icon from 'components/Shared/Icon'
 import IconButton from 'components/Shared/IconButton'
 import UserCommunities from 'components/UserCommunities'
 
 function Sidebar(props) {
   return (
     <Wrapper>
-      <Icon name="assembly" />
+      <IconButton icon="plus" />
       <UserCommunities />
-      <IconButton name="user-circle" size="xl" />
+      <IconButton icon="user-circle" size="xl" />
     </Wrapper>
   )
 }
