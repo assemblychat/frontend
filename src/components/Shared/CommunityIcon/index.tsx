@@ -1,6 +1,11 @@
+import React from 'react'
 import styled from 'styled-components'
 
-function OrganizationIcon(props) {
+type Props = {
+  className?: string
+}
+
+function OrganizationIcon(props: Props) {
   const { className } = props
   return <div className={className} />
 }

@@ -1,8 +1,5 @@
-import { useContext } from 'react'
+import React from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-
-// context
-import { AppContext } from 'context'
 
 // utils
 import { backgroundColor, fontColor } from 'utils/theme'
@@ -16,12 +13,9 @@ type AppLayoutProps = {
 
 function AppLayout(props: AppLayoutProps) {
   const { children } = props
-  const { state, dispatch } = useContext(AppContext)
-
-  const { mode } = state.theme
 
   return (
-    <ThemeProvider theme={{ mode }}>
+    <ThemeProvider theme={{ mode: 'dark' }}>
       <Wrapper>
         <Sidebar />
         <GlobalStyle />
