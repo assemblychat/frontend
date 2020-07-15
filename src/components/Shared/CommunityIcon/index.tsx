@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 type Props = {
-  className: string
+  className?: string
 }
 
 function OrganizationIcon(props: Props) {
