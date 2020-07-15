@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import Icon, { IconName } from '@assemblychat/icons'
 
 import { primaryColor, secondaryColor, fontColor } from 'utils/theme'
-
-// components
-import Icon from 'components/Shared/Icon'
 
 type ButtonProps = {
   children?: React.ReactChild
   className?: string
-  icon?: string
+  icon?: IconName
   outlined?: boolean
   color?: 'primary' | 'secondary'
   onClick?: () => null
@@ -20,7 +18,7 @@ function Button(props: ButtonProps) {
 
   return (
     <button className={className} {...rest}>
-      {icon && <Icon name={icon} />}
+      {icon && <Icon icon={icon} />}
       {children}
     </button>
   )
