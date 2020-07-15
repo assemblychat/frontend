@@ -1,6 +1,17 @@
 import React, { createContext, useReducer, Dispatch } from 'react'
 import { ThemeType, ThemeActions, themeReducer } from 'context/theme'
 
+export type ActionMap<M extends { [index: string]: any }> = {
+  [Key in keyof M]: M[Key] extends undefined
+    ? {
+        type: Key
+      }
+    : {
+        type: Key
+        payload: M[Key]
+      }
+}
+
 type InitialStateType = {
   theme: ThemeType
 }
