@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
-    "test": "yarn run lint",
+    "test:all": "yarn run lint",
     "generate:icons": "svgr --replace-attr-values '#fff=fill' -d ./src/components/Shared/Icon/js --ignore-existing ./src/components/Shared/Icon/svg"
   },
   "dependencies": {
